@@ -37,7 +37,7 @@ A organização do código foi uma prioridade para garantir clareza e manutenibi
 
 O projeto está disponível para visualização e teste no seguinte link:
 
-*   **Em breve**
+*   https://todo-list-whatsmenu-mocha.vercel.app/
 
 ## Como Executar o Projeto Localmente
 
