@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TODO-List App com Next.js
 
-## Getting Started
+Uma aplicação web moderna e responsiva de lista de tarefas (Todo-List) construída com Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+Este projeto foi desenvolvido como parte de um teste técnico para a empresa **WhatsMenu**. O objetivo é demonstrar um conjunto de habilidades em desenvolvimento frontend, incluindo:
+- Construção de aplicações web com **Next.js** e o **App Router**.
+- Utilização de **TypeScript** para um código robusto e seguro.
+- Manipulação de estado no React com hooks (incluindo hooks customizados).
+- Criação de interfaces de usuário reativas e responsivas com **Tailwind CSS**.
+- Implementação de uma suíte de testes completa (unitários e de integração) com **Vitest** e **React Testing Library**.
+- Boas práticas de organização de código, componentização e manutenibilidade.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   **Adicionar Tarefas:** Interface limpa para adicionar novas tarefas com título e descrição opcional.
+*   **Visualizar e Filtrar:** Exibe a lista de tarefas, permitindo filtrar por "Todas", "Incompletas" e "Completas".
+*   **Marcar como Completa:** Permite marcar e desmarcar tarefas, com uma mudança visual clara para indicar o status.
+*   **Editar Tarefas:** Funcionalidade de edição "in-place" que permite ao usuário modificar o título e a descrição de tarefas existentes.
+*   **Excluir Tarefas:** Remove tarefas da lista com um diálogo de confirmação para evitar exclusões acidentais.
+*   **Persistência de Dados:** As tarefas são salvas no `localStorage` do navegador.
+*   **Testes Abrangentes:** O projeto inclui uma suíte de testes que cobre todas as funcionalidades CRUD.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Decisões Técnicas e Arquitetura
 
-## Learn More
+### Estrutura do Projeto
+A organização do código foi uma prioridade para garantir clareza e manutenibilidade. A estrutura de pastas segue um padrão comum em projetos React modernos:
+- **`app/`**: Contém a lógica de roteamento e as páginas principais, utilizando o **App Router** do Next.js para aproveitar Server Components e Client Components de forma otimizada.
+- **`components/`**: Abriga todos os componentes React reutilizáveis (`Button`, `Input`, `TaskItem`). Esta abordagem promove a consistência visual e a reutilização de código (DRY).
+- **`hooks/`**: Lógicas complexas e reutilizáveis foram abstraídas em hooks customizados. O `useLocalStorage` encapsula a interação com a Web Storage API, e o `useIsClient` resolve o comum erro de hidratação (Hydration Mismatch) em aplicações SSR, demonstrando um entendimento de problemas do mundo real.
+- **`types/`**: Centraliza todas as definições de tipo do TypeScript, como a interface `Task`, tornando o projeto mais seguro e fácil de entender.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O projeto está disponível para visualização e teste no seguinte link:
 
-## Deploy on Vercel
+*   **Em breve**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Como Executar o Projeto Localmente
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Pré-requisitos
+
+*   Node.js (versão 18 ou superior)
+*   npm ou yarn
+*   Git
+
+### Instalação
+
+1.  Clone o repositório para a sua máquina:
+    ```bash
+    git clone https://github.com/dusvak/todo-list-whatsmenu.git
+    ```
+
+2.  Navegue até o diretório do projeto:
+    ```bash
+    cd todo-list-whatsmenu
+    ```
+
+3.  Instale as dependências do projeto:
+    ```bash
+    npm install
+    ```
+
+### Execução
+
+1.  Para iniciar o servidor de desenvolvimento:
+    ```bash
+    npm run dev
+    ```
+
+2.  Abra seu navegador e acesse `http://localhost:3000`.
+
+### Executando os Testes
+
+*   Para rodar os testes no terminal:
+    ```bash
+    npm run test
+    ```
+*   Para abrir a interface gráfica do Vitest:
+    ```bash
+    npm run test:ui
+    ```
+
+## Tecnologias Utilizadas
+
+*   **Next.js**
+*   **React**
+*   **TypeScript**
+*   **Tailwind CSS**
+*   **tailwind-variants**
+*   **Vitest**
+*   **React Testing Library**
+*   **ESLint**
